@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        input[type="submit"], .retake {
+            display: block;
+            width: 120px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, .retake:hover {
+            background-color: #218838;
+        }
+        #result {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. What does HTML stand for?</p>
+            <label><input type="radio" name="q1" value="HyperText Markup Language"> HyperText Markup Language</label><br>
+            <label><input type="radio" name="q1" value="HighText Machine Language"> HighText Machine Language</label><br>
+            <label><input type="radio" name="q1" value="HyperText Makeup Language"> HyperText Makeup Language</label>
+        </div>
+
+        <div class="question">
+            <p>2. Which version of HTML introduced semantic elements?</p>
+            <label><input type="radio" name="q2" value="HTML4"> HTML4</label><br>
+            <label><input type="radio" name="q2" value="HTML5"> HTML5</label><br>
+            <label><input type="radio" name="q2" value="XHTML"> XHTML</label>
+        </div>
+
+        <div class="question">
+            <p>3. Which HTML tag is used to create a container for content?</p>
+            <label><input type="radio" name="q3" value="section"> section</label><br>
+            <label><input type="radio" name="q3" value="div"> div</label><br>
+            <label><input type="radio" name="q3" value="span"> span</label>
+        </div>
+
+        <div class="question">
+            <p>4. What tag is used to display an image in HTML?</p>
+            <label><input type="radio" name="q4" value="img"> img</label><br>
+            <label><input type="radio" name="q4" value="image"> image</label><br>
+            <label><input type="radio" name="q4" value="src"> src</label>
+        </div>
+
+        <div class="question">
+            <p>5. Which attribute is used to add a link to an anchor tag?</p>
+            <label><input type="radio" name="q5" value="link"> link</label><br>
+            <label><input type="radio" name="q5" value="href"> href</label><br>
+            <label><input type="radio" name="q5" value="src"> src</label>
+        </div>
+
+        <div class="question">
+            <p>6. What tag is used for an unordered list?</p>
+            <label><input type="radio" name="q6" value="ul"> ul</label><br>
+            <label><input type="radio" name="q6" value="li"> li</label><br>
+            <label><input type="radio" name="q6" value="ol"> ol</label>
+        </div>
+
+        <div class="question">
+            <p>7. Which attribute is used to add a CSS class to an element?</p>
+            <label><input type="radio" name="q7" value="id"> id</label><br>
+            <label><input type="radio" name="q7" value="style"> style</label><br>
+            <label><input type="radio" name="q7" value="class"> class</label>
+        </div>
+
+        <div class="question">
+            <p>8. Which tag contains metadata in an HTML document?</p>
+            <label><input type="radio" name="q8" value="meta"> meta</label><br>
+            <label><input type="radio" name="q8" value="head"> head</label><br>
+            <label><input type="radio" name="q8" value="body"> body</label>
+        </div>
+
+        <div class="question">
+            <p>9. What declaration defines the HTML version used?</p>
+            <label><input type="radio" name="q9" value="HTML"> HTML</label><br>
+            <label><input type="radio" name="q9" value="DOCTYPE"> DOCTYPE</label><br>
+            <label><input type="radio" name="q9" value="VERSION"> VERSION</label>
+        </div>
+
+        <div class="question">
+            <p>10. What language is used for styling HTML content?</p>
+            <label><input type="radio" name="q10" value="CSS"> CSS</label><br>
+            <label><input type="radio" name="q10" value="JavaScript"> JavaScript</label><br>
+            <label><input type="radio" name="q10" value="PHP"> PHP</label>
+        </div>
+
+        <input type="submit" value="Submit" onclick="showResults(event)">
+    </form>
+
+    <div id="result" style="display: none;">
+        <p>Your score is: <span id="score"></span> out of 10</p>
+        <button class="retake" onclick="retakeQuiz()">Retake Quiz</button>
+    </div>
+
+    <script>
+        function showResults(event) {
+            event.preventDefault();
+            const correctAnswers = {
+                q1: "HyperText Markup Language",
+                q2: "HTML5",
+                q3: "div",
+                q4: "img",
+                q5: "href",
+                q6: "ul",
+                q7: "class",
+                q8: "head",
+                q9: "DOCTYPE",
+                q10: "CSS"
+            };
+
+            let score = 0;
+            const form = document.getElementById('quizForm');
+
+            for (const [key, value] of Object.entries(correctAnswers)) {
+                const selected = form.elements[key].value;
+                if (selected === value) {
+                    score++;
+                }
+            }
+
+            document.getElementById('score').textContent = score;
+            document.getElementById('quizForm').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+        }
+
+        function retakeQuiz() {
+            document.getElementById('quizForm').reset();
+            document.getElementById('quizForm').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

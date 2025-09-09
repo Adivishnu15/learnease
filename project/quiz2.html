@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        input[type="submit"], .retake {
+            display: block;
+            width: 120px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, .retake:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. What does CSS stand for?</p>
+            <label><input type="radio" name="q1" value="Cascading Style Sheets"> Cascading Style Sheets</label><br>
+            <label><input type="radio" name="q1" value="Creative Style System"> Creative Style System</label><br>
+            <label><input type="radio" name="q1" value="Colorful Style Sheets"> Colorful Style Sheets</label>
+        </div>
+
+        <div class="question">
+            <p>2. Which CSS property is used to change the background color?</p>
+            <label><input type="radio" name="q2" value="background-color"> background-color</label><br>
+            <label><input type="radio" name="q2" value="color"> color</label><br>
+            <label><input type="radio" name="q2" value="bgcolor"> bgcolor</label>
+        </div>
+
+        <div class="question">
+            <p>3. How do you make text bold in CSS?</p>
+            <label><input type="radio" name="q3" value="font-weight: bold;"> font-weight: bold;</label><br>
+            <label><input type="radio" name="q3" value="text-style: bold;"> text-style: bold;</label><br>
+            <label><input type="radio" name="q3" value="font-bold: true;"> font-bold: true;</label>
+        </div>
+
+        <div class="question">
+            <p>4. What is the default position value of an HTML element?</p>
+            <label><input type="radio" name="q4" value="static"> static</label><br>
+            <label><input type="radio" name="q4" value="relative"> relative</label><br>
+            <label><input type="radio" name="q4" value="absolute"> absolute</label>
+        </div>
+
+        <div class="question">
+            <p>5. Which property is used to change the font size?</p>
+            <label><input type="radio" name="q5" value="font-size"> font-size</label><br>
+            <label><input type="radio" name="q5" value="text-size"> text-size</label><br>
+            <label><input type="radio" name="q5" value="font-height"> font-height</label>
+        </div>
+
+        <div class="question">
+            <p>6. How do you add a shadow to an element?</p>
+            <label><input type="radio" name="q6" value="box-shadow"> box-shadow</label><br>
+            <label><input type="radio" name="q6" value="shadow"> shadow</label><br>
+            <label><input type="radio" name="q6" value="element-shadow"> element-shadow</label>
+        </div>
+
+        <div class="question">
+            <p>7. Which property is used to align text to the center?</p>
+            <label><input type="radio" name="q7" value="text-align: center;"> text-align: center;</label><br>
+            <label><input type="radio" name="q7" value="align: center;"> align: center;</label><br>
+            <label><input type="radio" name="q7" value="text-center: true;"> text-center: true;</label>
+        </div>
+
+        <div class="question">
+            <p>8. What is the correct syntax for a CSS comment?</p>
+            <label><input type="radio" name="q8" value="/* comment */"> /* comment */</label><br>
+            <label><input type="radio" name="q8" value="// comment"> // comment</label><br>
+            <label><input type="radio" name="q8" value="# comment"> # comment</label>
+        </div>
+
+        <div class="question">
+            <p>9. How do you select an element with id "header" in CSS?</p>
+            <label><input type="radio" name="q9" value="#header"> #header</label><br>
+            <label><input type="radio" name="q9" value=".header"> .header</label><br>
+            <label><input type="radio" name="q9" value="header"> header</label>
+        </div>
+
+        <div class="question">
+            <p>10. How do you apply a style to all <p> elements?</p>
+            <label><input type="radio" name="q10" value="p"> p</label><br>
+            <label><input type="radio" name="q10" value=".p"> .p</label><br>
+            <label><input type="radio" name="q10" value="#p"> #p</label>
+        </div>
+
+        <input type="submit" value="Submit" onclick="showResults(event)">
+    </form>
+
+    <div id="result" style="display: none;">
+        <p>Your score is: <span id="score"></span> out of 10</p>
+        <button class="retake" onclick="retakeQuiz()">Retake Quiz</button>
+    </div>
+
+    <script>
+        function showResults(event) {
+            event.preventDefault();
+            const correctAnswers = {
+                q1: "Cascading Style Sheets",
+                q2: "background-color",
+                q3: "font-weight: bold;",
+                q4: "static",
+                q5: "font-size",
+                q6: "box-shadow",
+                q7: "text-align: center;",
+                q8: "/* comment */",
+                q9: "#header",
+                q10: "p"
+            };
+
+            let score = 0;
+            const form = document.getElementById('quizForm');
+
+            for (const [key, value] of Object.entries(correctAnswers)) {
+                const selected = form.elements[key].value;
+                if (selected === value) {
+                    score++;
+                }
+            }
+
+            document.getElementById('score').textContent = score;
+            document.getElementById('quizForm').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+        }
+
+        function retakeQuiz() {
+            document.getElementById('quizForm').reset();
+            document.getElementById('quizForm').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

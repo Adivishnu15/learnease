@@ -1,0 +1,6 @@
+[07-Jan-2025 14:35:02 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, string given in C:\Users\DELL USER\Desktop\Backend\project\project\login.php on line 69
+[07-Jan-2025 14:35:11 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, string given in C:\Users\DELL USER\Desktop\Backend\project\project\login.php on line 69
+[07-Jan-2025 15:16:47 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, string given in C:\Users\DELL USER\Desktop\Backend\project\project\login.php on line 69
+[08-Jan-2025 05:39:37 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, string given in C:\Users\DELL USER\Desktop\Front\project\project\login.php on line 69
+[09-Jan-2025 08:17:38 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, string given in C:\Users\DELL USER\Desktop\LearnEase\Front\project\project\login.php on line 69
+[09-Jan-2025 08:19:14 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, string given in C:\Users\DELL USER\Desktop\LearnEase\Front\project\project\login.php on line 69
