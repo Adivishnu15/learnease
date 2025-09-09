@@ -51,8 +51,6 @@ CREATE TABLE `comments` (
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`id`, `content_id`, `user_id`, `tutor_id`, `comment`, `date`) VALUES
-('gEMNXbrZVp5T2J88Ls7N', 'IRHgZDWZuBHFqmLJLZXv', 'zcSvgAgMl3GnzIam5kr0', 'ee6lSlmfGn9X1T4mWyIy', 'EXCELLENT TEACHING', '2025-01-07');
 
 -- --------------------------------------------------------
 
@@ -89,16 +87,6 @@ CREATE TABLE `content` (
 -- Dumping data for table `content`
 --
 
-INSERT INTO `content` (`id`, `tutor_id`, `playlist_id`, `title`, `description`, `video`, `thumb`, `date`, `status`) VALUES
-('IRHgZDWZuBHFqmLJLZXv', 'ee6lSlmfGn9X1T4mWyIy', 'ZEaz4xVxF3ZTZJsuXiF5', 'Introduction', '\r\nHTML is a markup language that structures web content, enabling the creation of text, images, links, and multimedia for websites.\r\n\r\n\r\n\r\n\r\n\r\n', 'mXbzo0P7oJp8FZYtZbZv.mp4', 'bpEXLFwGVl1Nimq3mnTj.png', '2025-01-07', 'active'),
-('yUhlSA3wYoqLLu4gVajI', 'ee6lSlmfGn9X1T4mWyIy', 'ZEaz4xVxF3ZTZJsuXiF5', 'Introduction', 'Ep2', 'xrvJIBm442Pa7bZS4bLc.mp4', 'yC0Bx6fNnKMLMr8v37fO.png', '2025-01-07', 'active'),
-('4qL424AIQnI7J8fPQCqx', 'ee6lSlmfGn9X1T4mWyIy', 'ZEaz4xVxF3ZTZJsuXiF5', 'EP3', 'EP3', 'zX72fGmKzpp1M5TYsKeC.mp4', 'LBbOG6srToXLnF6TqZ9K.png', '2025-01-07', 'active'),
-('s7VxiR173kF9scyGA9CI', 'ee6lSlmfGn9X1T4mWyIy', 'ZEaz4xVxF3ZTZJsuXiF5', 'EP4', 'EP4', 'AnPMF2JC4ynXoRCbgfHz.mp4', 'r5ii3AOWON5zXM3h9Qfk.png', '2025-01-07', 'active'),
-('fJvn6eNsA9koAC2b8MYg', 'ee6lSlmfGn9X1T4mWyIy', 'ZEaz4xVxF3ZTZJsuXiF5', 'EP5', 'EP5', '6C8deDtkhT3xjcBhSvfN.mp4', 'HkEkmYp40xfm9rNO3NL5.png', '2025-01-07', 'active'),
-('q7dILYZob9SNKfMCxdEG', 'ee6lSlmfGn9X1T4mWyIy', 'ZEaz4xVxF3ZTZJsuXiF5', 'EP6', 'EP6', 'm7V1x4yt0kxSEaCcs1WF.mp4', 'ovlzzLluIOeA0AUkGamE.png', '2025-01-07', 'active'),
-('hSKYsjpU9VmaLqI05J9N', 'ee6lSlmfGn9X1T4mWyIy', 'ZEaz4xVxF3ZTZJsuXiF5', 'EP7', 'EP7', 'V1R9ndFvv7G6rsYikFTd.mp4', 'nZ1fLd89Yr8ga5PLzOto.png', '2025-01-07', 'active'),
-('fT8VtQXwXwsZRqrScgmZ', 'ee6lSlmfGn9X1T4mWyIy', 'ZEaz4xVxF3ZTZJsuXiF5', 'EP8', 'EP8', 'CmZ1ttLRx4KQ2Y3gJbOq.mp4', 'N9EjH7Iz7SRxbDIV7AEn.png', '2025-01-07', 'active'),
-('4qzCZh7gSFlWpET1A9IY', 'ee6lSlmfGn9X1T4mWyIy', 'ZEaz4xVxF3ZTZJsuXiF5', 'EP9', 'EP9', 'jAJ8qtX9hVjylnjVGw9a.mp4', 'dzjMx1D5wfstToK3kKNr.png', '2025-01-07', 'active');
 
 -- --------------------------------------------------------
 
@@ -116,8 +104,6 @@ CREATE TABLE `likes` (
 -- Dumping data for table `likes`
 --
 
-INSERT INTO `likes` (`user_id`, `tutor_id`, `content_id`) VALUES
-('zcSvgAgMl3GnzIam5kr0', 'ee6lSlmfGn9X1T4mWyIy', 'IRHgZDWZuBHFqmLJLZXv');
 
 -- --------------------------------------------------------
 
@@ -139,10 +125,6 @@ CREATE TABLE `playlist` (
 -- Dumping data for table `playlist`
 --
 
-INSERT INTO `playlist` (`id`, `tutor_id`, `title`, `description`, `thumb`, `date`, `status`) VALUES
-('ZEaz4xVxF3ZTZJsuXiF5', 'ee6lSlmfGn9X1T4mWyIy', 'HTML', '\r\nHTML is a markup language that structures web content, enabling the creation of text, images, links, and multimedia for websites.\r\n\r\n\r\n\r\n\r\n\r\n\r\n', 'RP8fqmkmMXB4ogsb9tPJ.png', '2025-01-07', 'active'),
-('suKWqAeYlIZl39dmplbz', 'ee6lSlmfGn9X1T4mWyIy', 'CSS', 'CSS (Cascading Style Sheets) is a stylesheet language used to design and customize websites, controlling layout, colors, fonts, spacing, and responsiveness for enhanced user experiences.', '3dYxb8Yan45LPlsxASXu.png', '2025-01-07', 'active'),
-('MNKf5h88acFKhvJF1D7U', 'ee6lSlmfGn9X1T4mWyIy', 'JAVA SCRIPT', 'JavaScript is a versatile programming language enabling interactive web elements, dynamic content, animations, and enhancing user experiences on websites and applications.', '9df3bNOZWsTUcB3xHIo4.png', '2025-01-07', 'active');
 
 -- --------------------------------------------------------
 
@@ -164,8 +146,6 @@ CREATE TABLE `tutors` (
 -- Dumping data for table `tutors`
 --
 
-INSERT INTO `tutors` (`id`, `name`, `profession`, `email`, `password`, `image`, `status`) VALUES
-('ee6lSlmfGn9X1T4mWyIy', 'Bhuvi', 'teacher', 'Bhuvi@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', 'i70DrWT8XHbpqJTOf1r2.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -186,8 +166,6 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `image`, `status`) VALUES
-('zcSvgAgMl3GnzIam5kr0', 'Virat', 'Virat@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', 'VZzNXrWP0ia3A0OFcvyr.jpg', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
